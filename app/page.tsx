@@ -40,7 +40,7 @@ export default function Home() {
         <p className="mb-2">{eventoActivo.fecha}</p>
         <div className="mb-4">
           {eventoActivo.tipoPlayer === 'clappr' ? (
-            <ClapprPlayer url={eventoActivo.stream} />
+            <ClapprPlayer src={eventoActivo.stream} />
           ) : (
             <iframe
               width="100%"

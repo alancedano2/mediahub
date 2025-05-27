@@ -7,10 +7,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "14.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-jsx": "^5.1.1"
+  "next": "14.1.0",
+  "react": "18.2.0",
+  "react-dom": "18.2.0",
+  "tailwindcss": "^3.3.2"  // la versión puede variar según la que instales
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

@@ -1,29 +1,22 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-export default function ClapprPlayer({ url }: { url: string }) {
-  const playerRef = useRef<HTMLDivElement>(null);
-
+const ClapprPlayer = ({ src }: { src: string }) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js';
     script.async = true;
     script.onload = () => {
-      if ((window as any).Clappr && playerRef.current) {
-        new (window as any).Clappr.Player({
-          source: url,
-          parentId: '#player',
-          width: '100%',
-          height: 500,
-        });
-      }
+      new (window as any).Clappr.Player({
+        source: src,
+        parentId: '#clappr',
+        width: '100%',
+        height: '100%',
+      });
     };
     document.body.appendChild(script);
+  }, [src]);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [url]);
-
-  return <div id="player" ref={playerRef} className="rounded-lg" />;
-}
+  return <div id="clappr" className="w-full h-[60vh] bg-black"></div>;
+};
+export default ClapprPlayer;

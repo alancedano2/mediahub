@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import ClapprPlayer from '@/components/ClapprPlayer';
-import Navbar from '@/components/Navbar';
+import ClapprPlayer from '../components/ClapprPlayer'
+import Navbar from '../components/Navbar'
 
 const eventos = [
   {
